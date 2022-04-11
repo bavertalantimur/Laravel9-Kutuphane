@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/admin',function(){
+    echo "Hello Admin";
+});
 Route::get('/', function () {
     return view('welcome');
 });
