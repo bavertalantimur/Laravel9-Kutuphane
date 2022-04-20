@@ -10,6 +10,11 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
+
+    public function aboutus()
+    {
+        return view('home.about');
+    }
     public function test($id,$name)
     {
         $data['id']=$id;
@@ -20,4 +25,5 @@ class HomeController extends Controller
         echo "id number:",$id;
         echo "<br>Name:",$name;*/
     }
+
 }

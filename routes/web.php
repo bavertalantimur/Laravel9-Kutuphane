@@ -20,6 +20,8 @@ Route::get('/home2', function () { //eski home
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 // /home yazarsak o sayfaya gider
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);; // koşul ekledık
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');

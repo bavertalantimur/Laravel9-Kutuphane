@@ -1,16 +1,13 @@
 @extends('layouts.home')
 
-@section('title', 'Sub Page Title')
-
-@section('sidebar')
-      @parent  <p>//parentsilinirse anasayfadan hiç bişey gelmez</p>
-
-    <p>Sub page data</p>
-@endsection
-
+@section('title', 'About Us')
 @section('content')
-    @parent
-    <p>This is my body content.</p><br>
-    aaaaaaa<br>
-    bbbbbb<br>
+    <div class="col-sm-12">
+        <h1>about Us</h1>
+        bbbbbbbbbbbbbbbbb<br>
+        ccccccccccccccccc<br>
+        kkkkkkkkkkkkkkkkkk<br>
+        <br>
+        <br>
+    </div>
 @endsection
