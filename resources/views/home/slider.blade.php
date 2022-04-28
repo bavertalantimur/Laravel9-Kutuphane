@@ -4,21 +4,21 @@
         <div class="hero-carousel__slide">
             <img src="{{asset('assets')}}/img/home/hero-slide1.png" alt="" class="img-fluid">
             <a href="#" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <h3>Milyonlarca Kitap</h3>
                 <p>Accessories Item</p>
             </a>
         </div>
         <div class="hero-carousel__slide">
             <img src="{{asset('assets')}}/img/home/hero-slide2.png" alt="" class="img-fluid">
             <a href="#" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <h3>Rahat Çalışma Ortanı</h3>
                 <p>Accessories Item</p>
             </a>
         </div>
         <div class="hero-carousel__slide">
             <img src="{{asset('assets')}}/img/home/hero-slide3.png" alt="" class="img-fluid">
             <a href="#" class="hero-carousel__slideOverlay">
-                <h3>Wireless Headphone</h3>
+                <h3>24 Saat Hizmet</h3>
                 <p>Accessories Item</p>
             </a>
         </div>

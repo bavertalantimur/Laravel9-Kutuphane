@@ -14,13 +14,13 @@
                         <li class="nav-item active"><a class="nav-link" href="index.html">Anasayfa</a></li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Ödünç Alma</a>
+                               aria-expanded="false">Kütüphanemiz</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="category.html">Kitap Kategorisi</a></li>
-                                <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                                <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                                <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-product.html"></a></li>
+                                <li class="nav-item"><a class="nav-link" href="checkout.html">Çalışma Salonlarımız</a></li>
+                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Kitap Talep formu</a></li>
+                                <li class="nav-item"><a class="nav-link" href="cart.html">Ödünç Kitap Sorgulama</a></li>
                             </ul>
                         </li>
                         <li class="nav-item submenu dropdown">
@@ -28,19 +28,19 @@
                                aria-expanded="false">Blog</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Detayları</a></li>
                             </ul>
                         </li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Pages</a>
+                               aria-expanded="false">Üye İşlemleri</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+                                <li class="nav-item"><a class="nav-link" href="register.html">Kayıt Ol</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tracking-order.html">Takip Et</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
                     </ul>
 
                     <ul class="nav-shop">

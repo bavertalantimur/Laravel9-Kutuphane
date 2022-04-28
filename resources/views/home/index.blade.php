@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Sub Page Title')
+@section('title','Kütüphane Sitesi')
 
 @section('content')
     @include('home.main')
