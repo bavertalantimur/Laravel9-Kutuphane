@@ -5,5 +5,6 @@
 @section('content')
     @include('home.main')
     @include('home.slider')
+    @include('home.category')
 
 @endsection
