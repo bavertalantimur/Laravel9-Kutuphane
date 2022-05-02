@@ -4,19 +4,20 @@
             <div class="row section_gap">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title large_title">Our Mission</h4>
+                        <h4 class="footer_title large_title">Misyonumuz</h4>
                         <p>
-                            So seed seed green that winged cattle in. Gathering thing made fly you're no
-                            divided deep moved us lan Gathering thing us land years living.
+                            Kütüphanemizin asıl amacı gerekli kaynak ve çalışma ortamı oluşturarak
+                            gelecek nesillere akıllı,bilgilive egitimli bireyler yetiştirmeye yardımcı olmaktır.
+
                         </p>
                         <p>
-                            So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
+                            İnsanoğlunun bütün yaptıkları düşündükleri elde ettikleri ve başından geçenler kitapların sayfalarında yatmaktadır.
                         </p>
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">Quick Links</h4>
+                        <h4 class="footer_title">Link</h4>
                         <ul class="list">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Shop</a></li>
@@ -29,28 +30,28 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget instafeed">
-                        <h4 class="footer_title">Gallery</h4>
+                        <h4 class="footer_title">Sosyal Medya</h4>
                         <ul class="social__media">
                             <li><a href="#"><i class="fa-brands fa-facebook fa-2x m-2"></i>
                                 </a></li>
                             <li><a href="#"><i class="fa-brands fa-instagram fa-2x m-2"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><<i class="fa-brands fa-twitter fa-2x m-2" ></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">Contact Us</h4>
+                        <h4 class="footer_title">İletişim</h4>
                         <div class="ml-40">
                             <p class="sm-head">
                                 <span class="fa fa-location-arrow"></span>
-                                Head Office
+                                Konum
                             </p>
                             <p>123, Main Street, Your City</p>
 
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
-                                Phone Number
+                                Telefon Numaralarımız
                             </p>
                             <p>
                                 +123 456 7890 <br>

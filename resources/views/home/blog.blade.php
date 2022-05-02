@@ -52,7 +52,7 @@
                             <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
                         </ul>
                         <h4 class="card-blog__title"><a href="single-blog.html">Kütüphanemizin her hafta çıkardığı dergilere bakabilirsiniz.</a></h4>
-                        <p>Magazinden sanata ,sanattan bilime, bilimden spora çeşit çeşit dergilerimize göz atabilirsiniz.</p>
+                        <p>Magazinden sanata ,sanattan bilime, bilimden spor dallarına çeşit çeşit dergilerimize göz atabilirsiniz.</p>
                         <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
