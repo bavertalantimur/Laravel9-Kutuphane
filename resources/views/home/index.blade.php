@@ -8,5 +8,6 @@
     @include('home.category')
     @include('home.offer')
     @include('home.popular')
+    @include('home.blog')
 
 @endsection
