@@ -1,10 +1,12 @@
 @extends('layouts.home')
 
-@section('title','Kütüphane Sitesi')
+@section('title','Talantimur Kütüphanesi')
 
 @section('content')
     @include('home.main')
     @include('home.slider')
     @include('home.category')
+    @include('home.offer')
+    @include('home.popular')
 
 @endsection
