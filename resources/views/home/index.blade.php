@@ -9,5 +9,6 @@
     @include('home.offer')
     @include('home.popular')
     @include('home.blog')
+    @include('home.subscribe')
 
 @endsection
