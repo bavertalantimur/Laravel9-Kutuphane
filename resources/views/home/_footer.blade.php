@@ -35,7 +35,7 @@
                             <li><a href="#"><i class="fa-brands fa-facebook fa-2x m-2"></i>
                                 </a></li>
                             <li><a href="#"><i class="fa-brands fa-instagram fa-2x m-2"></i></a></li>
-                            <li><a href="#"><<i class="fa-brands fa-twitter fa-2x m-2" ></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter fa-2x m-2" ></i></a></li>
                         </ul>
                     </div>
                 </div>

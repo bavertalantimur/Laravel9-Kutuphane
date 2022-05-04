@@ -26,8 +26,12 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);; // koşul ekledık
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
+//Admin
+Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome');
+
+
 Route::get('/', function () {  //normalde /home yazmıştık
-    return view('home.index',['name'=>'CUMA BAVER']); //onu kaldırdık hiçbişey demesekte home sayfasına gider
+    return view('home.index',['name'=>'BAVER']); //onu kaldırdık hiçbişey demesekte home sayfasına gider
 });
 Route::redirect('/anasayfa', '/home')->name('anasayfa');
 
