@@ -135,7 +135,7 @@
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
-                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-heading">Bawer</div>
                                                     <div class="notification-text">Hi Teddy, Just wanted to let you
                                                         ...</div>
                                                 </div>

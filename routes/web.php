@@ -20,22 +20,36 @@ Route::get('/home2', function () { //eski home
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 // /home yazarsak o sayfaya gider
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);; // koşul ekledık
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
+Route::middleware('auth')->prefix('admin')->group(function () {
+
+    #Category
+    Route::get('/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
+    Route::get('/category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
+    Route::get('/category/update',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
+    Route::get('/category/delete',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
+    Route::get('/category/show',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
+
+});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
 //Admin
-Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home')->middleware('auth');
+Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
-Route::get('/', function () {  //normalde /home yazmıştık
-    return view('home.index',['name'=>'BAVER']); //onu kaldırdık hiçbişey demesekte home sayfasına gider
-});
-Route::redirect('/anasayfa', '/home')->name('anasayfa');
-
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
