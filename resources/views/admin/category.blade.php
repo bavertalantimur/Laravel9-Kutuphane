@@ -13,7 +13,9 @@
                                 <hr>
                             </h3>
                             <p>
-                            <h4>Category List</h4>
+
+
+                                <a href="{{route('admin_category_add')}}" type="button" class="btn btn-primary m-b-10 m-l-5">Add Category</a>
                             </p>
 
 
@@ -43,7 +45,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-title">
-                                <h4>Bootstrap Data Table </h4>
+                                <h4>Category List </h4>
 
                             </div>
                             <div class="bootstrap-data-table-panel">
@@ -68,7 +70,8 @@
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td>Edit</td>
-                                            <td>Delete</td>
+                                            <td> <a href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')">Delete</a> </td>
+
                                         </tr>
                                         @endforeach
                                         </tbody>
