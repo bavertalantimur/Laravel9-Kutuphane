@@ -57,8 +57,8 @@
                                             <th>Parent</th>
                                             <th>Title</th>
                                             <th>Status</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>Actions</th>
+
                                         </tr>
                                         </thead>
 
@@ -69,22 +69,13 @@
                                             <td>{{$rs->parent_id}}</td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a> </td>
-                                            <td> <a href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')">Delete</a> </td>
-
+                                            <td><a class="btn btn-info" href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a>
+                                           <a class="btn btn-success"  href="{{route('admin_category_show',['id' =>$rs->id])}}">Show</a>
+                                            <a  class="btn btn-danger"  href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')">Delete</a> </td>
                                         </tr>
                                         @endforeach
                                         </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                        </tfoot>
+
                                     </table>
                                 </div>
                             </div>

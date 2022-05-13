@@ -77,7 +77,7 @@
 
 
 
-                                        <button type="submit" class="btn btn-default">Add Category</button>
+                                        <button type="submit" class="btn btn-warning">Update Category</button>
                                     </form>
                                 </div>
                             </div>
