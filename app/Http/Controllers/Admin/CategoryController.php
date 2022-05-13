@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -55,8 +56,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data=new Category();
+
+        $data->parent_id = $request->input('parent_id');
+        $data->title = $request->input('title');
+        $data->keywords =$request->input('keywords');
+        $data->description =$request->input('description');
+        $data->status =$request->input('status');
+        if ($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
+        $data->save();
+        return redirect()->route('admin_category');
     }
+
 
     /**
      * Display the specified resource.
@@ -100,6 +114,9 @@ class CategoryController extends Controller
         $data->keywords =$request->input('keywords');
         $data->description =$request->input('description');
         $data->status =$request->input('status');
+        if ($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
         $data->save();
         return redirect()->route('admin_category');
     }
@@ -112,7 +129,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category,$id)
     {
-        DB::table('categories')->where('id', '=', $id)->delete();
+        $data=Category::find($id);
+
+
+        Storage::delete($data->image);
+        $data->delete();
         return redirect()->route('admin_category');
     }
 }

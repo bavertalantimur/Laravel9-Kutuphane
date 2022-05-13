@@ -56,6 +56,7 @@
                                             <th>Id</th>
                                             <th>Parent</th>
                                             <th>Title</th>
+                                            <th>Image</th>
                                             <th>Status</th>
                                             <th>Actions</th>
 
@@ -67,11 +68,17 @@
                                         <tr>
                                             <td>{{$rs->id}}</td>
                                             <td>{{$rs->parent_id}}</td>
+
                                             <td>{{$rs->title}}</td>
+                                            <td>
+                                                @if($rs->image)
+                                                    <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                                @endif
+                                            </td>
                                             <td>{{$rs->status}}</td>
                                             <td><a class="btn btn-info" href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a>
                                            <a class="btn btn-success"  href="{{route('admin_category_show',['id' =>$rs->id])}}">Show</a>
-                                            <a  class="btn btn-danger"  href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')">Delete</a> </td>
+                                            <a  class="btn btn-danger"  href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')"><i class="fas fa-trash fa-xs mx-1"></i>Delete</a> </td>
                                         </tr>
                                         @endforeach
                                         </tbody>
@@ -89,9 +96,7 @@
                     <div class="col-lg-12">
                         <div id="extra-area-chart"></div>
                         <div id="morris-line-chart"></div>
-                        @foreach($datalist as $rs)
-                            <p>{{$rs->title}}</p>
-                        @endforeach
+
                         <div class="footer">
                             <p>2018 © Admin Board. -
                                 <a href="#">example.com</a>

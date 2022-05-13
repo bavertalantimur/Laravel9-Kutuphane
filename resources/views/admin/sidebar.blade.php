@@ -8,7 +8,7 @@
                 <li class="label">{{Auth::user()->name}}</li>
                 <li><a class="sidebar-sub-toggle">
 
-                        <a href="{{route('admin_category')}}">Category</a>
+                        <a href="{{route('admin_category')}}"><i class="fas fa-th-large"></i>Category</a>
 
 
 

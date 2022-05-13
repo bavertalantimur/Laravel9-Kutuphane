@@ -42,7 +42,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="{{route('admin_category_create')}}" method="post">
+                                    <form action="{{route('admin_category_store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label>Parent</label>
@@ -56,6 +56,16 @@
                                         <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" name="title" class="form-control" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Image</label>
+                                            <div class="input-group">
+                                                <div class="input-group">
+                                                    <input type="file" class="custom-file-input "name="image">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose image file</label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <div class="form-group">
                                             <label>Keyword</label>
