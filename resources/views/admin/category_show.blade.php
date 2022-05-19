@@ -10,6 +10,7 @@
 
                 <div class="bootstrap-data-table-pane w-100 ">
                                 <div class="table-responsive ">
+                                    {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title)}}
 
 
                                     <table id="row-select" class="display table bordered border border-2 table-hover">

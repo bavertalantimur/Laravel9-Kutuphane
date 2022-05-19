@@ -50,4 +50,5 @@ class HomeController extends Controller
         echo "<br>Name:",$name;*/
     }
 
+
 }
