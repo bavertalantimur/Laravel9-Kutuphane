@@ -15,7 +15,7 @@
                             <p>
 
 
-                                <a href="{{route('admin_category_add')}}" type="button" class="btn btn-primary m-b-10 m-l-5">Add Category</a>
+                                <a href="{{route('admin_category')}}" type="button" class="btn btn-primary m-b-10 m-l-5">Add Category</a>
                             </p>
 
 
@@ -31,7 +31,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="#">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active">Category</li>
+                                <li class="breadcrumb-item active">Book</li>
                             </ol>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-title">
-                                <h4>Category List </h4>
+                                <h4>Book List </h4>
 
                             </div>
                             <div class="bootstrap-data-table-panel">
@@ -54,10 +54,13 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Parent</th>
+                                            <th>Category</th>
                                             <th>Title</th>
                                             <th>Image</th>
                                             <th>Status</th>
+                                            <th>Category Id</th>
+                                            <th>User Id</th>
+                                            <th>Number Page</th>
                                             <th>Actions</th>
 
                                         </tr>
@@ -76,6 +79,8 @@
                                                 @endif
                                             </td>
                                             <td>{{$rs->status}}</td>
+                                            <td>{{$rs->id}}</td>
+
                                             <td><a class="btn btn-info" href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a>
                                            <a class="btn btn-success"  href="{{route('admin_category_show',['id' =>$rs->id])}}">Show</a>
                                             <a  class="btn btn-danger"  href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm ('Delete ! Are you sure')"><i class="fas fa-trash fa-xs mx-1"></i>Delete</a> </td>
@@ -128,6 +133,7 @@
     <script src="{{asset('assets')}}/admin/js/lib/data-table/buttons.print.min.js"></script>
     <script src="{{asset('assets')}}/admin/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="{{asset('assets')}}/admin/js/lib/data-table/datatables-init.js"></script>
+
 
 
 

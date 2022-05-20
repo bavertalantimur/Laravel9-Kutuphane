@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\AdminBookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,22 +40,28 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
     Route::get('/category/show/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
 
-});
 
-Route::prefix('/book')->name('book')->controller(AdminBookController::class)->group(function () {
 
-    #Category
-    Route::get('/','index')->name('book');
-    Route::post('/store','store')->name('store');
-    Route::post('/create','create')->name('create');
-    Route::get('/edit/{id}','edit')->name('edit');
-    Route::post('/update/{id}','update')->name('update');
-    Route::get('/destroy/{id}','destroy')->name('destroy');
-    Route::get('/show/{id}','show')->name('show');
 
 
 });
 
+
+Route::prefix('admin')->name('admin.')->group(function (){
+    Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
+        #Category
+        Route::get('/','index')->name('listele');
+        Route::post('/store','store')->name('store');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
+
+
+    });
+
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

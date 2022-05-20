@@ -24,7 +24,7 @@ class AdminBookController extends Controller
         $data =Book::all();
 
 
-        return view('admin.book.index', ['data' => $data]);
+        return view('admin.book.index', ['datalist' => $data]);
     }
 
     /**
@@ -35,7 +35,7 @@ class AdminBookController extends Controller
     public function create()
     {
         $data=Category::all();
-        return view('admin.book.create',['data'=>$data]);
+        return view('admin.book.create',['datalist'=>$data]);
     }
 
 
@@ -134,7 +134,7 @@ class AdminBookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Book  $bookroute
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book,$id)
@@ -142,7 +142,9 @@ class AdminBookController extends Controller
         $data=Book::find($id);
 
 
-        Storage::delete($data->image);
+        if($data->image){
+            Storage::delete($data->image);
+        }
         $data->delete();
         return redirect('admin/book');
     }
