@@ -32,6 +32,7 @@
     <link href="{{asset('assets')}}/admin/css/style.css" rel="stylesheet">
     @yield('css')
     @yield('javascript')
+    @yield('head')
 </head>
 <body>
 @include('admin.header')
@@ -39,5 +40,6 @@
 @section('content')
 
 @show
+@yield('foot')
 </body>
 </html>

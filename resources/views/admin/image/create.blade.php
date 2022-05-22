@@ -1,5 +1,6 @@
 @extends('layouts.admin')
-@section('title','admin panel home page')
+@section('title','Image Gallery')
+
 @section('content')
 <div class="content-wrap">
     <div class="main">

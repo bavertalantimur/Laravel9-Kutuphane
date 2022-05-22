@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 @section('title','Edit Book')
+@section('head')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+@endsection
 @section('content')
     <div class="content-wrap">
         <div class="main">
@@ -80,12 +85,22 @@
                                                         <label class="custom-file-label" for="exampleInputFile">Choose image file</label>
                                                     </div>
                                                 </div>
-
+                                            </div>
                                                 <div class="form-group">
                                                     <label for="detail">Detail:</label>
                                                     <textarea class="form-control" rows="5" name="detail" id="detail" >{{$data->detail}}</textarea>
+                                                    <script>
+                                                        ClassicEditor
+                                                            .create( document.querySelector( '#detail' ) )
+                                                            .then( editor => {
+                                                                console.log( editor );
+                                                            } )
+                                                            .catch( error => {
+                                                                console.error( error );
+                                                            } );
+                                                    </script>
                                                 </div>
-                                            </div>
+
                                             <div class="form-group">
                                                 <label>Number of pages</label>
                                                 <input type="text" name="number_page" value="{{$data->number_page}}" class="form-control" >
@@ -114,15 +129,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer">
-                                <p>2018 © Admin Board. -
-                                    <a href="#">example.com</a>
-                                </p>
-                            </div>
+
                         </div>
                     </div>
                 </section>
             </div>
         </div>
     </div>
+@endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(function (){
+            $('.textarea').summernote()
+        })
+    </script>
 @endsection

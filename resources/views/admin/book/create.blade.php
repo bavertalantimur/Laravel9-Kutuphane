@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 @section('title','Add Book')
+
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+@endsection
+
 @section('content')
 <div class="content-wrap">
     <div class="main">
@@ -80,12 +86,23 @@
                                                     <label class="custom-file-label" for="exampleInputFile">Choose image file</label>
                                                 </div>
                                             </div>
-
-                                            <div class="form-group">
+                                        </div>
+                                        <div class="form-group">
                                                 <label for="detail">Detail:</label>
                                                 <textarea class="form-control" rows="5" name="detail" id="detail"></textarea>
-                                            </div>
+                                                <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#detail' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                                </script>
                                         </div>
+
+
                                         <div class="form-group">
                                             <label>Number of pages</label>
                                             <input type="text" name="number_page" class="form-control" >
