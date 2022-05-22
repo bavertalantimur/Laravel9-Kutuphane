@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->foreignId('category_id')->nullable();
             $table->foreignId('user_id')->nullable();
-            $table->foreignId('author_id')->nullable();
+            $table->foreignId('author8_id')->nullable();
             $table->string('title');
             $table->string('keywords')->nullable();
             $table->text('description')->nullable();

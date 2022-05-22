@@ -47,20 +47,17 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
 
-        DB::table('categories')->insert([
-            'parent_id' => $request->input('parent_id'),
-            'title' => $request->input('title'),
-            'keywords' => $request->input('keywords'),
-            'description' => $request->input('description'),
-            'status' => $request->input('status')
-        ]);
-        return redirect()->route('admin_category');
+        $datalist=Category::all();
+        return view('admin.category_add',
+        ['datalist'=>$datalist]);
+
     }
     public function add()
     {
         $datalist = DB::table('categories')->get();
 
-        return view('admin.category_add',['datalist' => $datalist]);
+        return view('admin.
+        category_add',['datalist' => $datalist]);
     }
 
     /**
@@ -153,3 +150,4 @@ class CategoryController extends Controller
         return redirect()->route('admin_category');
     }
 }
+

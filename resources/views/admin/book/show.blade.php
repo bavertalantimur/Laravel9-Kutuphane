@@ -20,6 +20,13 @@
                                                 <td>{{$data->id}}</td>
                                             </tr>
                                             <tr>
+                                                <th>Category Id</th>
+                                                <td>
+                                                {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category,$data->category->title)}}
+                                                </td>
+
+                                            </tr>
+                                            <tr>
                                                 <th>Author Id</th>
                                                 <td>{{$data->author_id}}</td>
                                             </tr>
@@ -44,6 +51,8 @@
                                                 <th>Image</th>
                                                 <td>{{$data->image}}</td>
                                             </tr>
+
+
                                             <tr>
                                                 <th>Detail</th>
                                                 <td>{{$data->detail}}</td>

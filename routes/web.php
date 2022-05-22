@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminBookController;
+use App\Http\Controllers\Admin\ImageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
     Route::post('/category/store',[\App\Http\Controllers\Admin\CategoryController::class,'store'])->name('admin_category_store');
     Route::get('/category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
-    Route::post('/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
+    Route::get('/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
     Route::get('/category/edit/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'edit'])->name('admin_category_edit');
     Route::post('/category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
     Route::get('/category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
@@ -60,6 +62,16 @@ Route::prefix('admin')->name('admin.')->group(function (){
 
 
     });
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        #Category
+        Route::get('/{bid}','index')->name('index');
+        Route::post('/store/{bid}','store')->name('store');
+        Route::get('/destroy/{bid}/{id}','destroy')->name('destroy');
+
+
+
+    });
+
 
 });
 

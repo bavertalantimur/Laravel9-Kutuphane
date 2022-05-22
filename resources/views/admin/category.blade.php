@@ -15,7 +15,7 @@
                             <p>
 
 
-                                <a href="{{route('admin_category')}}" type="button" class="btn btn-primary m-b-10 m-l-5">Add Category</a>
+                                <a href="{{route('admin_category_create')}}" type="button" class="btn btn-primary m-b-10 m-l-5">Add Category</a>
                             </p>
 
 
@@ -58,9 +58,6 @@
                                             <th>Title</th>
                                             <th>Image</th>
                                             <th>Status</th>
-                                            <th>Category Id</th>
-                                            <th>User Id</th>
-                                            <th>Number Page</th>
                                             <th>Actions</th>
 
                                         </tr>
@@ -79,7 +76,6 @@
                                                 @endif
                                             </td>
                                             <td>{{$rs->status}}</td>
-                                            <td>{{$rs->id}}</td>
 
                                             <td><a class="btn btn-info" href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a>
                                            <a class="btn btn-success"  href="{{route('admin_category_show',['id' =>$rs->id])}}">Show</a>
@@ -133,7 +129,6 @@
     <script src="{{asset('assets')}}/admin/js/lib/data-table/buttons.print.min.js"></script>
     <script src="{{asset('assets')}}/admin/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="{{asset('assets')}}/admin/js/lib/data-table/datatables-init.js"></script>
-
 
 
 

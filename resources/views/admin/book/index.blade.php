@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Book List')
+@section('title','Book Image Gallery List')
 @section('content')
     <div class="content-wrap">
         <div class="main">
@@ -52,11 +52,12 @@
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>category_id</th>
-                                                <th>user_id</th>
-                                                <th>author_id</th>
+                                                <th>Category</th>
+                                                <th>User_id</th>
+                                                <th>Author_id</th>
                                                 <th>Status</th>
                                                 <th>Image</th>
+                                                <th>Image Gallery</th>
                                                 <th>Title</th>
                                                 <th>Slug</th>
                                                 <th>Actions</th>
@@ -68,7 +69,7 @@
                                             @foreach($datalist as $rs)
                                                 <tr>
                                                     <td>{{$rs->id}}</td>
-                                                    <td>{{$rs->category_id}}</td>
+                                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                                     <td>{{$rs->user_id}}</td>
                                                     <td>{{$rs->author_id}}</td>
                                                     <td>{{$rs->status}}</td>
@@ -76,6 +77,13 @@
                                                         @if($rs->image)
                                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                                         @endif
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{route('admin.image.index',['bid' =>$rs->id])}}"
+                                                        onclick="return !window.open(this.href,'','top=50 left=100 width=1100 height=700')">
+
+                                                        <img src="{{asset('assets')}}/admin/images/gallery.png" style="height:40px">
+                                                        </a>
                                                     </td>
                                                     <td>{{$rs->title}}</td>
                                                     <td>{{$rs->slug}}</td>
