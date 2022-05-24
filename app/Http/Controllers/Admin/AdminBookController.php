@@ -128,7 +128,7 @@ class AdminBookController extends Controller
 
 
         $data->save();
-        return redirect('admin/book');
+        return redirect(route('admin.book.listele'));
     }
 
     /**

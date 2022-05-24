@@ -50,9 +50,9 @@
                                             <div class="form-group">
                                                 <label>Category</label>
                                                 <select class="form-control" name="category_id">
-                                                    <option value="0" selected="selected">Ana Category</option>
+
                                                     @foreach($datalist as $rs)
-                                                        <option value="{{$rs->id}}"> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+                                                        <option value="{{$rs->id}}" @if($rs->id==$data->category->id) selected @endif> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
