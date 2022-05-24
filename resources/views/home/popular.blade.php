@@ -21,7 +21,6 @@
                     </div>
 
                     <div class="card-body">
-                        <p>Sabahattin Ali</p>
                         <h4 class="card-product__title"><a href="single-product.html">{{$rs->title}}</a></h4>
 
                     </div>

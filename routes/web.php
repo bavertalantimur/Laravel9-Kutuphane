@@ -49,7 +49,16 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
 
-Route::prefix('admin')->name('admin.')->group(function (){
+Route::prefix('admin')->name('a
+
+
+
+
+
+
+
+
+dmin.')->group(function (){
     Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
         #Category
         Route::get('/','index')->name('listele');

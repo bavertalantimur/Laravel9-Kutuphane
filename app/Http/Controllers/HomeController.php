@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,10 +12,10 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata=Book::limit(7)->get();
-        $booklist1=Book::limit(6)->get();
+        $categorydata=Category::limit(8)->get();
         return view('home.index',[
             'sliderdata'=>$sliderdata,
-            'booklist1'=>$booklist1
+            'categorydata'=>$categorydata
 
         ]);
     }
