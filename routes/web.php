@@ -30,6 +30,8 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);; // koşul ekledık
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
+
+
 Route::middleware('auth')->prefix('admin')->group(function () {
 
     #Category
@@ -48,17 +50,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 });
 
-
-Route::prefix('admin')->name('a
-
+Route::get('/book/{id}', [HomeController::class, 'book'])->name('book');
 
 
-
-
-
-
-
-dmin.')->group(function (){
+Route::prefix('admin')->name('admin.')->group(function (){
     Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
         #Category
         Route::get('/','index')->name('listele');

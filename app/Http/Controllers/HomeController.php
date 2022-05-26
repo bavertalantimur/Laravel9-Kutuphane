@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -18,8 +19,32 @@ class HomeController extends Controller
             'categorydata'=>$categorydata
 
         ]);
+
+
+
     }
-    public function login()
+
+    public function book($id)
+    {
+
+        $data = Book::find($id);
+        $images=DB::table('images')->where('book_id',$id)->get();
+
+
+        return view('home.book', [
+            'data' => $data,
+            'images'=>$images
+
+        ]);
+
+
+    }
+
+
+
+
+
+        public function login()
     {
         return view('admin.login');
     }

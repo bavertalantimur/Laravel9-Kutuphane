@@ -14,9 +14,8 @@
                             <img src="{{Storage::url($rs->image)}}" class="img-fluid" style=" height: 360px">
                         @endif
                         <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
+                            <li> <a href="{{route('book',['id'=>$rs->id])}}" class="main-btn quick view" ><i class="fa fa-search-plus"></i> Quick view</a></li>
+
                         </ul>
                     </div>
 
