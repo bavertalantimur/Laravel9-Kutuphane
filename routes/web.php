@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminBookController;
 use App\Http\Controllers\Admin\ImageController;
-
-
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\FaqController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,18 +20,23 @@ use App\Http\Controllers\Admin\ImageController;
 */
 
 
-Route::get('/home2', function () { //eski home
-    return view('welcome');
-});
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/contactus', [SettingsController::class, 'contactus'])->name('contactus');
+Route::post('/contactus', [MessageController::class, 'store'])->name('contactus_message');
+Route::get('/references', [SettingsController::class, 'references'])->name('references');
+Route::get('/faq', [FaqController::class, 'home'])->name('faq');
+Route::view('/loginuser','home.login');
+Route::view('/registeruser','home.register');
+Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
+
+
+
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 // /home yazarsak o sayfaya gider
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);; // koşul ekledık
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
-
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
@@ -51,9 +58,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
 Route::get('/book/{id}', [HomeController::class, 'book'])->name('book');
+Route::get('/category/{id}', [HomeController::class, 'book_category'])->name('book_category');
 
-
-Route::prefix('admin')->name('admin.')->group(function (){
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function (){
     Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
         #Category
         Route::get('/','index')->name('listele');
@@ -71,11 +78,40 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::get('/{bid}','index')->name('index');
         Route::post('/store/{bid}','store')->name('store');
         Route::get('/destroy/{bid}/{id}','destroy')->name('destroy');
+    });
 
-
+    #Settings
+   Route::prefix('/settings')->name('settings.')->controller(SettingsController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::post('/update','update')->name('update');
+    });
+   #Messages
+   Route::prefix('/messages')->name('messages.')->controller(MessageController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::get('/delete/{id}','destroy')->name('delete');
+    });
+   #Faq
+   Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('delete');
 
     });
 
+   #admin user route
+    Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::post('/addrole/{id}', 'addrole')->name('addrole');
+
+
+    });
 
 });
 

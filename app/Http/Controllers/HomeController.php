@@ -9,15 +9,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
+
 {
+    public static function maincategorylist()
+    {
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
     public function index()
     {
         $sliderdata=Book::limit(7)->get();
         $categorydata=Category::limit(8)->get();
+        $categoryList=Category::all();
         return view('home.index',[
             'sliderdata'=>$sliderdata,
-            'categorydata'=>$categorydata
-
+            'categorydata'=>$categorydata,
+            'categoryList'=>$categoryList
         ]);
 
 
@@ -38,6 +44,10 @@ class HomeController extends Controller
         ]);
 
 
+    }
+    public function book_category($id){
+        $bookList=Book::where('category_id',$id)->get();
+        return view('home.book.booklist',['bookList'=>$bookList]);
     }
 
 
@@ -66,6 +76,13 @@ class HomeController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 
 
     public function aboutus()
@@ -82,6 +99,7 @@ class HomeController extends Controller
         echo "id number:",$id;
         echo "<br>Name:",$name;*/
     }
+
 
 
 }

@@ -13,9 +13,8 @@
                         <img class="card-img" src="{{Storage::url($rs->image)}}" style=" height: 160px">
                         @endif
                         <ul class="card-product__imgOverlay">
-                            <li><button><i class="ti-search"></i></button></li>
-                            <li><button><i class="ti-shopping-cart"></i></button></li>
-                            <li><button><i class="ti-heart"></i></button></li>
+                            <li><a href="{{route('book_category',['id'=>$rs->id])}}" class="bg-primary px-3 py-2 text-white"><i class="ti-search"></i>Detail</a></li>
+
                         </ul>
                     </div>
                     <div class="card-body">

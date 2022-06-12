@@ -14,9 +14,8 @@
                                         <img src="{{Storage::url($rs->image)}}" class="img-fluid" >
                                     @endif
                                     <ul class="card-product__imgOverlay">
-                                        <li><button><i class="ti-search"></i></button></li>
-                                        <li><button><i class="ti-shopping-cart"></i></button></li>
-                                        <li><button><i class="ti-heart"></i></button></li>
+                                        <li><button><i class="ti-search"></i>Detail</button></li>
+
                                     </ul>
                                 </div>
 
